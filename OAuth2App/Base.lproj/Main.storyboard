@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="NmW-Em-Ayd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="NmW-Em-Ayd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11198.2"/>
-        <plugIn identifier="com.apple.imagekit.ibplugin" version="11198.2"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -658,9 +660,12 @@
             <objects>
                 <windowController storyboardIdentifier="Services" showSeguePresentationStyle="single" id="NmW-Em-Ayd" sceneMemberID="viewController">
                     <window key="window" title="Services" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="bhF-RO-Gh7">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="200" y="461" width="300" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="NmW-Em-Ayd" id="981-31-CmI"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="KsJ-NW-6rF" kind="relationship" relationship="window.shadowedContentViewController" id="69L-dQ-9vY"/>
@@ -675,24 +680,25 @@
             <objects>
                 <viewController id="KsJ-NW-6rF" customClass="ServicesViewController" customModule="OAuth2App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oS8-Ym-lHS">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="345"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="v8S-G3-hAi">
-                                <rect key="frame" x="45" y="87" width="210" height="96"/>
+                                <rect key="frame" x="45" y="96" width="210" height="153"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4nT-c2-mcp">
-                                        <rect key="frame" x="16" y="13" width="80" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Reddit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pRP-Tq-mC7">
+                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4as-yh-c14">
+                                        <rect key="frame" x="106" y="105" width="80" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Reddit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bHf-UA-gp7">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="openReddit:" target="KsJ-NW-6rF" id="V0u-Rh-aAm"/>
+                                            <action selector="openReddit:" target="KsJ-NW-6rF" id="sBO-By-quG"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="E4l-ET-96i">
-                                        <rect key="frame" x="97" y="48" width="99" height="32"/>
+                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4l-ET-96i">
+                                        <rect key="frame" x="97" y="6" width="99" height="32"/>
                                         <buttonCell key="cell" type="push" title="BitBucket" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7fQ-xf-cRB">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -701,14 +707,45 @@
                                             <action selector="openBitBucket:" target="KsJ-NW-6rF" id="NY9-NF-LbU"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-43-nfR">
-                                        <rect key="frame" x="14" y="48" width="83" height="32"/>
+                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-43-nfR">
+                                        <rect key="frame" x="14" y="105" width="83" height="32"/>
                                         <buttonCell key="cell" type="push" title="GitHub" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ba-Iy-SOB">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="openGitHub:" target="KsJ-NW-6rF" id="DA2-eY-pRc"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nT-c2-mcp">
+                                        <rect key="frame" x="4" y="54" width="104" height="32"/>
+                                        <buttonCell key="cell" type="push" title=" clientcred" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pRP-Tq-mC7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openMyClemsonClientCredentials:" target="KsJ-NW-6rF" id="zHd-LH-0I5"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5x-6I-BVZ">
+                                        <rect key="frame" x="104" y="54" width="84" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Google" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FsQ-at-A3R">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openGoogle:" target="KsJ-NW-6rF" id="lxn-tg-Sy1"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03y-vJ-BlG">
+                                        <rect key="frame" x="14" y="6" width="70" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="anon" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Qa-bj-vaL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openMyClemsonAnonAccount:" target="KsJ-NW-6rF" id="RnH-Ov-zXU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -720,20 +757,13 @@
                                     <constraint firstItem="4nT-c2-mcp" firstAttribute="top" secondItem="FfD-43-nfR" secondAttribute="bottom" constant="14" id="Ghi-kL-Lpi"/>
                                     <constraint firstItem="FfD-43-nfR" firstAttribute="top" secondItem="v8S-G3-hAi" secondAttribute="top" constant="20" id="K5S-fW-R98"/>
                                     <constraint firstItem="4nT-c2-mcp" firstAttribute="centerX" secondItem="FfD-43-nfR" secondAttribute="centerX" id="OjH-dH-289"/>
+                                    <constraint firstAttribute="height" constant="153" id="Qb8-fS-R7b"/>
+                                    <constraint firstItem="X5x-6I-BVZ" firstAttribute="baseline" secondItem="4nT-c2-mcp" secondAttribute="baseline" id="Wol-hW-LCd"/>
                                     <constraint firstItem="E4l-ET-96i" firstAttribute="baseline" secondItem="FfD-43-nfR" secondAttribute="baseline" id="a1w-81-UVe"/>
+                                    <constraint firstItem="X5x-6I-BVZ" firstAttribute="centerX" secondItem="E4l-ET-96i" secondAttribute="centerX" id="jCD-NQ-Vcl"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FfD-43-nfR" secondAttribute="trailing" constant="20" id="rYG-zS-PTY"/>
                                 </constraints>
                             </customView>
-                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="X5x-6I-BVZ">
-                                <rect key="frame" x="150" y="100" width="84" height="32"/>
-                                <buttonCell key="cell" type="push" title="Google" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FsQ-at-A3R">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="openGoogle:" target="KsJ-NW-6rF" id="lxn-tg-Sy1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="v8S-G3-hAi" secondAttribute="bottom" id="Hmi-ZL-wuu"/>
@@ -742,14 +772,12 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v8S-G3-hAi" secondAttribute="trailing" id="bcj-wl-OMX"/>
                             <constraint firstItem="v8S-G3-hAi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oS8-Ym-lHS" secondAttribute="top" id="dsH-zZ-FPn"/>
                             <constraint firstItem="v8S-G3-hAi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oS8-Ym-lHS" secondAttribute="leading" id="sXg-Jh-xkK"/>
-                            <constraint firstItem="X5x-6I-BVZ" firstAttribute="baseline" secondItem="4nT-c2-mcp" secondAttribute="baseline" id="tSg-d4-Sg8"/>
-                            <constraint firstItem="X5x-6I-BVZ" firstAttribute="centerX" secondItem="E4l-ET-96i" secondAttribute="centerX" id="xs0-gP-BKV"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="5LF-Lf-95T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="804"/>
+            <point key="canvasLocation" x="-299" y="841.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -760,6 +788,9 @@
                         <rect key="contentRect" x="196" y="95" width="480" height="362"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="480" height="362"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="rfN-Di-Jx9"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>

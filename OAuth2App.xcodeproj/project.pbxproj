@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6826082F21090F6D00AF5A9C /* MyClemsonClientCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6826082E21090F6D00AF5A9C /* MyClemsonClientCredentials.swift */; };
+		6826083121092B0D00AF5A9C /* MyClemsonAnonAccountLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6826083021092B0D00AF5A9C /* MyClemsonAnonAccountLoader.swift */; };
 		EE0EDD221A39F43F00CE60E7 /* GitHubLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0EDD211A39F43F00CE60E7 /* GitHubLoader.swift */; };
 		EE1391D01AC5A862002C7B18 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA355841A39AC6500606646 /* OAuth2.framework */; };
 		EE1391D11AC5A862002C7B18 /* OAuth2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEA355841A39AC6500606646 /* OAuth2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -89,6 +91,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6826082E21090F6D00AF5A9C /* MyClemsonClientCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClemsonClientCredentials.swift; sourceTree = "<group>"; };
+		6826083021092B0D00AF5A9C /* MyClemsonAnonAccountLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClemsonAnonAccountLoader.swift; sourceTree = "<group>"; };
 		EE0EDD211A39F43F00CE60E7 /* GitHubLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLoader.swift; sourceTree = "<group>"; };
 		EE1391DC1AC5BDA8002C7B18 /* RedditLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditLoader.swift; sourceTree = "<group>"; };
 		EE28D05D1BED4D29001935BC /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				EEA355641A39ABF300606646 /* Images.xcassets */,
 				EEA355661A39ABF400606646 /* Main.storyboard */,
 				EEA3555E1A39ABF300606646 /* Supporting Files */,
+				6826082E21090F6D00AF5A9C /* MyClemsonClientCredentials.swift */,
+				6826083021092B0D00AF5A9C /* MyClemsonAnonAccountLoader.swift */,
 			);
 			path = OAuth2App;
 			sourceTree = "<group>";
@@ -349,6 +355,8 @@
 				EE28D05E1BED4D29001935BC /* ServicesViewController.swift in Sources */,
 				EEC49F371C9C2BE100989A18 /* BitBucketLoader.swift in Sources */,
 				EEA355631A39ABF300606646 /* ViewController.swift in Sources */,
+				6826083121092B0D00AF5A9C /* MyClemsonAnonAccountLoader.swift in Sources */,
+				6826082F21090F6D00AF5A9C /* MyClemsonClientCredentials.swift in Sources */,
 				EEA355611A39ABF300606646 /* AppDelegate.swift in Sources */,
 				EE0EDD221A39F43F00CE60E7 /* GitHubLoader.swift in Sources */,
 			);

@@ -45,6 +45,14 @@ class ServicesViewController: NSViewController {
 	@IBAction func openReddit(_ sender: NSButton?) {
 		try! openViewControllerWithLoader(RedditLoader(), sender: sender)
 	}
+    
+    @IBAction func openMyClemsonClientCredentials(_ sender: NSButton?) {
+        try! openViewControllerWithLoader(MyClemsonClientCredentials(), sender: sender)
+    }
+    
+    @IBAction func openMyClemsonAnonAccount(_ sender: NSButton?) {
+        try! openViewControllerWithLoader(MyClemsonAnonAccountLoader(), sender: sender)
+    }
 	
 	@IBAction func openGoogle(_ sender: NSButton?) {
 		try! openViewControllerWithLoader(GoogleLoader(), sender: sender)
